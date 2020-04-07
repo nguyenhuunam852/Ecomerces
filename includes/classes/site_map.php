@@ -90,4 +90,16 @@ if (!defined('IS_ADMIN_FLAG')) {
    function buildTree() {
      return $this->buildBranch($this->root_category_id);
    }
+//-bof-zca_bootstrap  *** 1 of 1 ***
+    public function setParentStartEndStrings($start, $end = "</ul>\n")
+    {
+        $this->parent_group_start_string = $start;
+        $this->parent_group_end_string = $end;
+    }
+    public function setChildStartString($start, $end = "</li>\n")
+    {
+        $this->child_start_string = $start;
+        $this->child_end_string = $end;
+    }
+//-eof-zca_bootstrap  *** 1 of 1 ***   
  }

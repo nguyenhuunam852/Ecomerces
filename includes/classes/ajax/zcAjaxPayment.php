@@ -3,7 +3,7 @@
  * zcAjaxPayment
  *
  * @package templateSystem
- * @copyright Copyright 2003-2019 Zen Cart Development Team
+ * @copyright Copyright 2003-2016 Zen Cart Development Team
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: mc12345678 2019 Apr 30 Modified in v1.5.6b $
  */
@@ -186,7 +186,10 @@ class zcAjaxPayment extends base
     $breadcrumb->add (NAVBAR_TITLE_1, zen_href_link (FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
     $breadcrumb->add (NAVBAR_TITLE_2);
 
-    $breadCrumbHtml = $breadcrumb->trail (BREAD_CRUMBS_SEPARATOR);
+//-bof-zca_bootstrap  *** 1 of 1 ***
+//    $breadCrumbHtml = $breadcrumb->trail (BREAD_CRUMBS_SEPARATOR);
+    $breadCrumbHtml = '<ol class="breadcrumb">' . $breadcrumb->trail (BREAD_CRUMBS_SEPARATOR) . '</ol>';
+//-eof-zca_bootstrap  *** 1 of 1 ***
     $body_code = DIR_FS_CATALOG.$template->get_template_dir ('tpl_ajax_checkout_confirmation_default.php', DIR_WS_TEMPLATE, $current_page_base, 'templates').'/tpl_ajax_checkout_confirmation_default.php';
     ob_start ();
     require_once ($body_code);
